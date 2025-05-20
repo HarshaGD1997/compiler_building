@@ -34,9 +34,11 @@ std::vector<Token> tokenize(const std::string& str){
 
 			if(buf == "return"){
 				tokens.push_back({.type=TokenType::RETURN});
+				buf.clear();
 			}
 			else{
 				std::cerr << "messed up" << std::endl;
+				exit(EXIT_FAILURE);
 			}
 		}
 	}
@@ -64,7 +66,7 @@ int main(int argc, char* argv[]){
 	//std::cout << contents << std::endl;
 	std::vector<Token> return_val = tokenize(contents);
 
-	std::cout << return_val << std::endl;	
+		
 
 	
 
